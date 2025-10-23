@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf48dfxbc1cpv"]
+
+[ext_resource type="Script" uid="uid://berjj3dcnu2yk" path="res://block.gd" id="1_cgrg5"]
+[ext_resource type="Texture2D" uid="uid://dtkqtxotgnnqk" path="res://icon.svg" id="2_4kun4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojgcc"]
+size = Vector2(118, 117)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgrg5"]
+size = Vector2(122, 129)
+
+[node name="Block" type="RigidBody2D"]
+script = ExtResource("1_cgrg5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4kun4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ojgcc")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="MergeDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MergeDetector"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_cgrg5")
+
+[connection signal="body_entered" from="MergeDetector" to="." method="_on_merge_detector_body_entered"]

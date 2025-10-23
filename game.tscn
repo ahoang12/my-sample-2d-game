@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://d07nr878rxl5o"]
+
+[ext_resource type="Script" uid="uid://ckffneejdrv1t" path="res://game.gd" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://cf48dfxbc1cpv" path="res://block.tscn" id="2_yqjtg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
+size = Vector2(1148, 95)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_uwrxv")
+BlockScene = ExtResource("2_yqjtg")
+
+[node name="Blocks" type="Node2D" parent="."]
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(308, 3)
+
+[node name="GameTimer" type="Timer" parent="."]
+
+[node name="TargetLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(576.5, 723)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-3.5, -37.5)
+shape = SubResource("RectangleShape2D_yqjtg")

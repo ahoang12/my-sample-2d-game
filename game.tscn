@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ckffneejdrv1t" path="res://game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cf48dfxbc1cpv" path="res://block.tscn" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://dw7i3k6qjumxi" path="res://2dGame.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://cyu65mge5okyx" path="res://background.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://cdfg5upj6h1kr" path="res://windzone.tscn" id="4_fc0e3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
@@ -12,8 +12,7 @@ size = Vector2(1388, 95)
 script = ExtResource("1_uwrxv")
 BlockScene = ExtResource("2_yqjtg")
 
-[node name="background" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(-178, -10)
+[node name="background" parent="." instance=ExtResource("3_fc0e3")]
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="."]
 

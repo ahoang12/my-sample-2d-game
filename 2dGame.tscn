@@ -29,11 +29,14 @@ position = Vector2(-546, -58)
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 offset_left = -275.0
 offset_top = 480.0
-offset_right = 85.0
-offset_bottom = 548.0
+offset_right = 251.0
+offset_bottom = 622.0
 theme_override_font_sizes/normal_font_size = 29
 theme_override_font_sizes/bold_font_size = 16
 text = "press 'space' to drop 
+						+
+	stack as many alligators as you can!
+
 "
 scroll_active = false
 tab_size = 2

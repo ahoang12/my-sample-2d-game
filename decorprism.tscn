@@ -15,12 +15,12 @@ scale = Vector2(0.554012, 0.6509224)
 texture = ExtResource("1_7thmi")
 
 [node name="UiStorePrism02" type="Sprite2D" parent="UiStorePrism01"]
-position = Vector2(697.2501, 453.557)
+position = Vector2(557.8002, -220.7828)
 scale = Vector2(1.4650425, 1.4649298)
 texture = ExtResource("1_7thmi")
 
 [node name="UiStorePrism01" type="Sprite2D" parent="UiStorePrism01/UiStorePrism02"]
-position = Vector2(15.864193, -285.05313)
+position = Vector2(-304.0631, -287.94217)
 scale = Vector2(0.6881825, 0.68162566)
 texture = ExtResource("1_7thmi")
 
@@ -30,6 +30,6 @@ scale = Vector2(0.6881825, 0.68162566)
 texture = ExtResource("1_7thmi")
 
 [node name="UiStorePrism01" type="Sprite2D" parent="UiStorePrism01/UiStorePrism02/UiStorePrism01/UiStorePrism01"]
-position = Vector2(-1144.723, 401.93192)
+position = Vector2(-339.3016, -527.0982)
 scale = Vector2(0.80957526, 0.81386375)
 texture = ExtResource("1_7thmi")

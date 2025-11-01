@@ -57,7 +57,3 @@ The game is inspired by:
 2. Press **Space** to drop the falling alligator.  
 3. Try to stack as many as you can without tipping the tower.  
 4. When the tower falls, it’s game over!  
-- Improve physics interactions & camera smoothing.
-- Optional background music & environment sounds.
-    target_value = randi_range(128, 512)
-    print("Target for this round:", target_value)

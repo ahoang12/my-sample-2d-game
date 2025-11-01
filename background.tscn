@@ -26,11 +26,11 @@ metadata/_edit_use_anchors_ = true
 show_behind_parent = true
 position = Vector2(-546, -58)
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = -215.0
-offset_top = 338.0
-offset_right = 311.0
-offset_bottom = 480.0
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -293.0
+offset_top = 357.0
+offset_right = 233.0
+offset_bottom = 499.0
 theme_override_font_sizes/normal_font_size = 29
 theme_override_font_sizes/bold_font_size = 16
 text = "press 'space' to drop 
@@ -40,3 +40,12 @@ text = "press 'space' to drop
 "
 scroll_active = false
 tab_size = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 383.0
+offset_top = 18.0
+offset_right = 731.0
+offset_bottom = 58.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 28
+text = "DON'T COLLAPSE!!"

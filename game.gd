@@ -5,8 +5,8 @@ extends Node2D
 @onready var player_blocks = $Blocks/PlayerBlocks
 @onready var timer = $GameTimer
 @onready var camera = $Camera2D
-@onready var game_over_label = $GameOverLabel
 @onready var wind_zone = $WindZone
+@onready var message_label = $UILayer/MessageLabel
 
 var current_block: RigidBody2D
 var move_speed := 110.0
@@ -18,17 +18,11 @@ var game_over := false
 var has_landed := false
 
 func _ready():
-	game_over_label.visible = false
 	spawn_block()
 	timer.wait_time = 0.02
 	timer.start()
 	timer.timeout.connect(_on_Timer_timeout)
 	wind_zone.wind_gust.connect(_on_wind_gust)
-	game_over_label.visible = false
-	game_over_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	game_over_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	game_over_label.add_theme_color_override("font_color", Color.RED)
-	game_over_label.add_theme_font_size_override("font_size", 48)
 
 func get_highest_block_y() -> float:
 	var min_y: float = player_spawn.position.y  # default if no blocks
@@ -106,32 +100,51 @@ func _on_wind_gust(force: Vector2):
 	if game_over:
 		return
 
-	print("💨 Wind gust! Force:", force.x)
 	for block in player_blocks.get_children():
 		if block is RigidBody2D:
-			block.apply_central_impulse(force * 0.8)
+			block.apply_central_impulse(force)
+	
+	# Show on-screen wind message
+	show_message("💨 Wind gust! Force: %.2f" % force.x, Color.YELLOW, 1.5)
 			
 func check_game_over():
 	if game_over:
 		return
 	
-	# Check if any block has fallen too far below the tower
+	var unstable_blocks := 0
+	
 	for block in player_blocks.get_children():
+		# 1. Detect if any block falls too low
 		if block.global_position.y > player_spawn.global_position.y + 600:
 			game_over_sequence()
 			return
+		
+		# 2. Detect sudden horizontal movement or tilt (collapse)
+		if abs(block.linear_velocity.x) > 300 or abs(block.angular_velocity) > 8:
+			unstable_blocks += 1
+	
+	# If multiple blocks are moving wildly → tower collapse
+	if unstable_blocks > 3:
+		game_over_sequence()
 			
 func game_over_sequence():
-	if game_over:
-		return
-	
 	game_over = true
 	timer.stop()
 	can_drop = false
 	
-	# Calculate score = total blocks successfully stacked
-	score = player_blocks.get_child_count() - 1  # minus current falling one
-	game_over_label.text = "GAME OVER!\nScore: " + str(score)
-	game_over_label.visible = true
+	# Freeze all blocks
+	for block in player_blocks.get_children():
+		if block is RigidBody2D:
+			block.freeze = true
 	
-	print("💀 Game Over! Final Score:", score)
+	var score = player_blocks.get_child_count()
+	show_message("💀 Game Over! Final Score: %d" % score, Color.RED, 999)
+	
+func show_message(text: String, color: Color, duration: float):
+	message_label.text = text
+	message_label.modulate = color
+	message_label.visible = true
+	
+	if duration < 999:
+		await get_tree().create_timer(duration).timeout
+		message_label.visible = false

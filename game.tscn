@@ -25,23 +25,6 @@ BlockScene = ExtResource("2_yqjtg")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 225)
 
-[node name="GameOverLabel" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -144.5
-offset_top = -33.5
-offset_right = 144.5
-offset_bottom = 33.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.23137255, 0.23137255, 1)
-theme_override_font_sizes/font_size = 48
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="ScoreLabel" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
@@ -54,3 +37,12 @@ position = Vector2(-569.5, -327)
 shape = SubResource("RectangleShape2D_yqjtg")
 
 [node name="WindZone" parent="." instance=ExtResource("4_fc0e3")]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="MessageLabel" type="Label" parent="UILayer"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 34
+horizontal_alignment = 1

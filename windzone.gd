@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var interval_range := Vector2(8.0, 12.0)
-@export var force_range := Vector2(-40.0, 40.0)
+@export var force_range := Vector2(-25.0, 25.0)
 
 var active := true
 

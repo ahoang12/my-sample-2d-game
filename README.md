@@ -1,39 +1,71 @@
-# Tower Clash
-A 2D puzzle tower game built with **Godot Engine** using **GDScript**.
+# 🌇 Tower Stack — 2D Physics Building Game
+
+A simple but challenging 2D stacking game made with **Godot 4**, where players drop moving blocks to build the tallest tower possible while facing natural forces like wind. The goal is to stack as many blocks as you can before the tower collapses!
 
 ---
 
-## Overview
-**Tower Clash** is a fast-paced 2D puzzle game inspired by **2048** and **Tetris**, where the player drops numbered blocks to merge equal values and reach a **random winning target** within **3 minutes**.
+## 🎮 Gameplay Overview
 
-Your goal: Merge smartly before the timer runs out. Once your tower reaches the target number, you win!
+Players drop moving blocks from above to create a stable tower.  
+Each block swings left and right horizontally — press **Space** to drop the block at the right time.
 
----
-
-## Gameplay Rules
-- Blocks spawn at the top with numbers like `2, 4, 8, 16`, etc.  
-- Press **Space** (or **Down Arrow**) to drop a block.  
-- When two blocks of the same number collide, they **merge and double**.  
-- Win by reaching the **target number** before the **3-minute timer** ends.  
-- If the tower exceeds the height limit or time runs out, **Game Over**.
+### Features
+- 🏗️ **Tower Building Mechanics:** Stack blocks as high as you can.  
+- 🌪️ **Obstacle (Dynamic Wind System):** Wind gusts trigger randomly every few seconds, slightly pushing your tower and testing your balance.  
+- 🧭 **Adaptive Camera:** Smoothly follows your tower as it grows taller.  
+- 💥 **Game Over Detection:** The game ends when your tower collapses or falls off-screen.  
+- 🧮 **Score System:** Score = number of successfully stacked blocks before the game is over.  
 
 ---
 
-## Game Settings
-- **Winning Target:** Randomized between `128–512` each round.  
-- **Time Limit:** `3 minutes (180 seconds)` per round.  
-- **Game Over Conditions:**
-  - Timer reaches 0  
-  - Tower exceeds height limit  
-  - Player hits the winning target  
+## 🧩 Design Goals
+
+- **Simplicity:** Easy to learn, one-button control.
+- **Challenge:** Players must drop blocks with good timing and positioning.
+- **Replayability:** Random wind events and varied block speeds ensure no two runs are the same.
 
 ---
 
-### Randomize Winning Target
-```gdscript
-var target_value: int
+## 🧠 Inspirations
 
-func _ready():
-    randomize()
+The game is inspired by:
+- *Tetris* — for its stacking and precision mechanics.  
+- *Jenga* — for the balance and tension aspect.  
+- *Tower Builder* (mobile) — for the satisfying feeling of dropping blocks.
+
+---
+
+## ⚙️ Development Process
+
+- Built in **Godot 4**.
+- Uses **GDScript** for physics and logic.
+- Assets are mostly procedural and simple 2D shapes (Rectangles, RigidBody2D).
+- UI and effects (wind warnings, game over text) handled with `Label` and `CanvasLayer` nodes.
+
+### Team Roles
+| Member | Focus |
+|--------|--------|
+| Anh + John | Core gameplay logic (block spawning, camera, physics) |
+| Anh + John | Obstacle systems (wind, earthquake, rain) |
+| Kareena | UI, sound design, and art assets |
+
+---
+
+## 🧱 How to Play
+
+1. Run the game in Godot.  
+2. Press **Space** to drop the moving falling block.  
+3. Try to stack as many as you can without tipping the tower.  
+4. When the tower falls, it’s game over!  
+
+---
+
+## 🚧 Future Plans
+
+- Add score counter & leaderboard.
+- Implement AI competitor mode.
+- Add multiple levels/scenes (each with a unique obstacle).  
+- Improve physics interactions & camera smoothing.
+- Optional background music & environment sounds.
     target_value = randi_range(128, 512)
     print("Target for this round:", target_value)

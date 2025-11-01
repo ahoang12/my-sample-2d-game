@@ -1,4 +1,4 @@
-# 🌇 Tower Stack — 2D Physics Building Game
+# 🌇 Alligator Stack
 
 A simple but challenging 2D stacking game made with **Godot 4**, where players drop moving blocks to build the tallest tower possible while facing natural forces like wind. The goal is to stack as many blocks as you can before the tower collapses!
 
@@ -10,7 +10,7 @@ Players drop moving blocks from above to create a stable tower.
 Each block swings left and right horizontally — press **Space** to drop the block at the right time.
 
 ### Features
-- 🏗️ **Tower Building Mechanics:** Stack blocks as high as you can.  
+- 🏗️ **Tower Building Mechanics:** Stack alligator blocks as high as you can.  
 - 🌪️ **Obstacle (Dynamic Wind System):** Wind gusts trigger randomly every few seconds, slightly pushing your tower and testing your balance.  
 - 🧭 **Adaptive Camera:** Smoothly follows your tower as it grows taller.  
 - 💥 **Game Over Detection:** The game ends when your tower collapses or falls off-screen.  
@@ -54,7 +54,7 @@ The game is inspired by:
 ## 🧱 How to Play
 
 1. Run the game in Godot.  
-2. Press **Space** to drop the moving falling block.  
+2. Press **Space** to drop the falling alligator.  
 3. Try to stack as many as you can without tipping the tower.  
 4. When the tower falls, it’s game over!  
 

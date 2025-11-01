@@ -1,23 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://d07nr878rxl5o"]
+[gd_scene load_steps=6 format=3 uid="uid://d07nr878rxl5o"]
 
 [ext_resource type="Script" uid="uid://ckffneejdrv1t" path="res://game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cf48dfxbc1cpv" path="res://block.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dw7i3k6qjumxi" path="res://2dGame.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://cdfg5upj6h1kr" path="res://windzone.tscn" id="4_fc0e3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
-size = Vector2(1148, 95)
+size = Vector2(1388, 95)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_uwrxv")
 BlockScene = ExtResource("2_yqjtg")
 
+[node name="background" parent="." instance=ExtResource("3_feb5d")]
+position = Vector2(-178, -10)
+
+[node name="PlayerSpawnPoint" type="Marker2D" parent="."]
+
 [node name="Blocks" type="Node2D" parent="."]
 
-[node name="SpawnPoint" type="Marker2D" parent="."]
-position = Vector2(308, 3)
+[node name="PlayerBlocks" type="Node2D" parent="Blocks"]
 
 [node name="GameTimer" type="Timer" parent="."]
 
-[node name="TargetLabel" type="Label" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 225)
+
+[node name="GameOverLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -33.5
+offset_right = 144.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.23137255, 0.23137255, 1)
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
 
@@ -25,5 +51,7 @@ offset_bottom = 23.0
 position = Vector2(576.5, 723)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(-3.5, -37.5)
+position = Vector2(-569.5, -327)
 shape = SubResource("RectangleShape2D_yqjtg")
+
+[node name="WindZone" parent="." instance=ExtResource("4_fc0e3")]

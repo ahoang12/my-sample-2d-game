@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdfg5upj6h1kr"]
+
+[ext_resource type="Script" uid="uid://diahxyew2qnk" path="res://windzone.gd" id="1_e8scm"]
+
+[node name="Windzone" type="Node2D"]
+script = ExtResource("1_e8scm")
+
+[node name="WindTimer" type="Timer" parent="."]

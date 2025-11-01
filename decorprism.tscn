@@ -5,22 +5,22 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="UiStorePrism01" type="Sprite2D" parent="."]
-position = Vector2(156, 121)
+position = Vector2(282, 163)
 scale = Vector2(1.5489419, 1.4176829)
 texture = ExtResource("1_7thmi")
 
 [node name="UiStorePrism01" type="Sprite2D" parent="UiStorePrism01"]
-position = Vector2(-43.58648, 69.80513)
+position = Vector2(-63.269005, 98.04731)
 scale = Vector2(0.554012, 0.6509224)
 texture = ExtResource("1_7thmi")
 
 [node name="UiStorePrism02" type="Sprite2D" parent="UiStorePrism01"]
-position = Vector2(675.2997, 319.5355)
+position = Vector2(697.2501, 453.557)
 scale = Vector2(1.4650425, 1.4649298)
 texture = ExtResource("1_7thmi")
 
 [node name="UiStorePrism01" type="Sprite2D" parent="UiStorePrism01/UiStorePrism02"]
-position = Vector2(13.042596, -243.85155)
+position = Vector2(15.864193, -285.05313)
 scale = Vector2(0.6881825, 0.68162566)
 texture = ExtResource("1_7thmi")
 

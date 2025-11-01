@@ -40,7 +40,7 @@ The game is inspired by:
 - Built in **Godot 4**.
 - Uses **GDScript** for physics and logic.
 - Assets are mostly procedural and simple 2D shapes (Rectangles, RigidBody2D).
-- UI and effects (wind warnings, game over text) handled with `Label` and `CanvasLayer` nodes.
+- UI and effects (wind warnings, game over).
 
 ### Team Roles
 | Member | Focus |

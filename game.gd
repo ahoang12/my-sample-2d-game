@@ -32,6 +32,9 @@ func get_highest_block_y() -> float:
 	return min_y
 
 func spawn_block():
+	if game_over:
+		return
+		 
 	var b = BlockScene.instantiate()
 	
 	# Determine where to spawn: above the tallest block
@@ -45,6 +48,9 @@ func spawn_block():
 
 
 func _on_Timer_timeout():
+	if game_over:
+		return
+		
 	if current_block and can_drop:
 		current_block.position.x += move_direction * move_speed * timer.wait_time
 		
@@ -55,6 +61,8 @@ func _on_Timer_timeout():
 			move_direction = 1
 
 func _process(delta):
+	if game_over:
+		return
 	if can_drop and Input.is_action_just_pressed("ui_accept"):  # Space or Enter
 		drop_block() 
 		update_camera()

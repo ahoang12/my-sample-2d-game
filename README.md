@@ -1,24 +1,24 @@
-# 🌇 Alligator Stack
+# Alligator Stack
 
 A simple but challenging 2D stacking game made with **Godot 4**, where players drop moving blocks to build the tallest tower possible while facing natural forces like wind. The goal is to stack as many blocks as you can before the tower collapses!
 
 ---
 
-## 🎮 Gameplay Overview
+## Gameplay Overview
 
 Players drop moving blocks from above to create a stable tower.  
 Each block swings left and right horizontally — press **Space** to drop the block at the right time.
 
 ### Features
-- 🏗️ **Tower Building Mechanics:** Stack alligator blocks as high as you can.  
-- 🌪️ **Obstacle (Dynamic Wind System):** Wind gusts trigger randomly every few seconds, slightly pushing your tower and testing your balance.  
-- 🧭 **Adaptive Camera:** Smoothly follows your tower as it grows taller.  
-- 💥 **Game Over Detection:** The game ends when your tower collapses or falls off-screen.  
-- 🧮 **Score System:** Score = number of successfully stacked blocks before the game is over.  
+- **Tower Building Mechanics:** Stack alligator blocks as high as you can.  
+- **Obstacle (Dynamic Wind System):** Wind gusts trigger randomly every few seconds, slightly pushing your tower and testing your balance.  
+- **Adaptive Camera:** Smoothly follows your tower as it grows taller.  
+- **Game Over Detection:** The game ends when your tower collapses or falls off-screen.  
+- **Score System:** Score = number of successfully stacked blocks before the game is over.  
 
 ---
 
-## 🧩 Design Goals
+## Design Goals
 
 - **Simplicity:** Easy to learn, one-button control.
 - **Challenge:** Players must drop blocks with good timing and positioning.
@@ -26,7 +26,7 @@ Each block swings left and right horizontally — press **Space** to drop the bl
 
 ---
 
-## 🧠 Inspirations
+## Inspirations
 
 The game is inspired by:
 - *Tetris* — for its stacking and precision mechanics.  
@@ -35,7 +35,7 @@ The game is inspired by:
 
 ---
 
-## ⚙️ Development Process
+## Development Process
 
 - Built in **Godot 4**.
 - Uses **GDScript** for physics and logic.
@@ -51,7 +51,7 @@ The game is inspired by:
 
 ---
 
-## 🧱 How to Play
+## How to Play
 
 1. Run the game in Godot.  
 2. Press **Space** to drop the falling alligator.  
@@ -60,7 +60,7 @@ The game is inspired by:
 
 ---
 
-## 🚧 Future Plans
+## Future Plans
 
 - Add score counter & leaderboard.
 - Implement AI competitor mode.
